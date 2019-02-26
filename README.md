@@ -9,3 +9,10 @@ I get the subtitles from [some website](http://www.opensubtitles.org/), and they
 
 
 My main motivation for writing this, though, was trying out PyQt, and python programming with a non-IDLE IDE, unit tests etc.  
+
+##Run this project
+
+For now, call this in bash: 
+```
+./run.sh
+```
