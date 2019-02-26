@@ -1,6 +1,4 @@
 from srtdataset import SrtDataSet
-
-from datetime import timedelta
 import re
 
 

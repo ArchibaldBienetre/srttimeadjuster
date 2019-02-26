@@ -49,11 +49,6 @@ class Main(QtGui.QMainWindow):
                                                   'SRT file (*.srt)')
         self.ui.outputFileEdit.setText(fpath)
 
-    # def readInputFile(self):
-    # f = open(self.ui.inputFileEdit.text(), 'r')
-    # with f:
-    # return f.read()
-
     def getInputFilePath(self):
         return self.ui.inputFileEdit.text()
 
