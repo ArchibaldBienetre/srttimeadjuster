@@ -24,7 +24,7 @@ This is my first attempt at writing a python UI using Qt, let's see how it works
 """
 
 
-# note to self: pyuic4 mainwindow.ui > mainwindow.py
+# note to self: pyuic5 mainwindow.ui > mainwindow.py
 class Main(QtWidgets.QMainWindow):
 
     def __init__(self):
