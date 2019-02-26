@@ -51,36 +51,26 @@ class DialState:
         tempValue = self.dial.value()
         if (self.isInLowestQuarterOfDial(tempValue) and self.isInHighestQuarterOfDial(self.oldDialValue)):
             self.fullTurns += 1
-        # print("jumping up from {:.2f} to {:.2f}".format(self.oldDialValue, tempValue))
-        # sys.stdout.flush()
         elif (self.isInHighestQuarterOfDial(tempValue) and self.isInLowestQuarterOfDial(self.oldDialValue)):
             self.fullTurns -= 1
-        # print("jumping down from {:.2f} to {:.2f}".format(self.oldDialValue, tempValue))
-        # sys.stdout.flush()
 
         self.oldDialValue = tempValue
         self.actualValue = (tempValue + self.adjustmentPerTurn * self.fullTurns) / DialState.dialScaling
         self.spinbox.setValue(self.actualValue)
 
     def spinboxClicked(self):
-        print("spinbox clicked!")
-        sys.stdout.flush()
+        pass
 
     def updateFromSpinbox(self):
         self.actualValue = self.spinbox.value()
-        # print("actual: {:.2f}".format(self.actualValue))
 
         tempValue = self.actualValue * DialState.dialScaling
 
         self.fullTurns = (tempValue - self.dial.minimum()) // self.adjustmentPerTurn
-        # print("full turns: {:.2f}".format(self.fullTurns))
 
         self.oldDialValue = tempValue - (self.adjustmentPerTurn * self.fullTurns)
 
         self.dial.setValue(self.oldDialValue)
-
-    # print("dial value: {:.2f}\n###".format(self.oldDialValue))
-    # sys.stdout.flush()
 
     def getActualSecondsValue(self):
         return self.actualValue

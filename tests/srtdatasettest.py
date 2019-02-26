@@ -3,10 +3,6 @@ from srttimeadjuster.srtdataset import SrtDataSet
 from datetime import timedelta
 
 
-# run with this command:
-#  ~/projects $ python -m srttimeadjuster.tests.srtdatasettest
-
-
 class SrtDataSetTest(unittest.TestCase):
     def testParseDataSetFromString(self):
         """simple test that SrtDataSet can parse a data set"""

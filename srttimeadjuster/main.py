@@ -3,8 +3,8 @@ from datetime import timedelta
 
 from PyQt5 import QtWidgets
 
-from srttimeadjuster.mainwindow import Ui_MainWindow
 from srttimeadjuster.dialstate import DialState
+from srttimeadjuster.mainwindow import Ui_MainWindow
 from srttimeadjuster.srtstreamer import SrtStreamer
 
 """
@@ -42,12 +42,12 @@ class Main(QtWidgets.QMainWindow):
 
     def showSelectInputFileDialog(self):
         fpath = QtWidgets.QFileDialog.getOpenFileName(self, 'Open SRT file', '/home',
-                                                  'SRT files (*.srt *.SRT)')  # '*.srt *.SRT;; Text files (*.txt)')
+                                                      'SRT files (*.srt *.SRT)')  # '*.srt *.SRT;; Text files (*.txt)')
         self.ui.inputFileEdit.setText(fpath[0])
 
     def showSelectOutputFileDialog(self):
         fpath = QtWidgets.QFileDialog.getSaveFileName(self, 'Select file to save to', '/home/output.srt',
-                                                  'SRT file (*.srt)')
+                                                      'SRT file (*.srt)')
         self.ui.outputFileEdit.setText(fpath[0])
 
     def getInputFilePath(self):
@@ -63,7 +63,7 @@ class Main(QtWidgets.QMainWindow):
         streamer = SrtStreamer(self.getInputFilePath(), self.getOutputFilePath(), self.getDelta())
         streamer.streamConvert()
         msgBox = QtWidgets.QMessageBox.information(self, "Success",
-                                               "The converted output has been saved to " + self.getOutputFilePath())
+                                                   "The converted output has been saved to " + self.getOutputFilePath())
 
 
 def main():

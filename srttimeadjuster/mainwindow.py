@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 
 
 class Ui_MainWindow(object):
@@ -115,5 +115,3 @@ class Ui_MainWindow(object):
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
         self.actionOpen_File.setText(_translate("MainWindow", "Open File..."))
         self.actionOpen_File.setToolTip(_translate("MainWindow", "Open Srt File"))
-
-
