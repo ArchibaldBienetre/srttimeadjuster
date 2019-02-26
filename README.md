@@ -16,3 +16,15 @@ For now, call this in bash:
 ```
 ./run.sh
 ```
+
+##Run all unit tests
+
+For now, call this in bash: 
+```
+./run_tests.sh
+```
+
+## Special thanks to 
+
+The [PyImports](https://github.com/cod3monk3y/PyImports) Github project for helping me figure out how to work with 
+python modules and unit tests. 
