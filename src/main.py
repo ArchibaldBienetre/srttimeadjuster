@@ -1,5 +1,5 @@
 import sys
-from PyQt4 import QtGui
+from PyQt5 import QtWidgets
 import mainwindow
 
 from dialstate import DialState
@@ -25,7 +25,7 @@ This is my first attempt at writing a python UI using Qt, let's see how it works
 
 
 # note to self: pyuic4 mainwindow.ui > mainwindow.py
-class Main(QtGui.QMainWindow):
+class Main(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(Main, self).__init__()
@@ -40,12 +40,12 @@ class Main(QtGui.QMainWindow):
         self.ui.generateOutputButton.clicked.connect(self.processFiles)
 
     def showSelectInputFileDialog(self):
-        fpath = QtGui.QFileDialog.getOpenFileName(self, 'Open SRT file', '/home',
+        fpath = QtWidgets.QFileDialog.getOpenFileName(self, 'Open SRT file', '/home',
                                                   'SRT files (*.srt *.SRT)')  # '*.srt *.SRT;; Text files (*.txt)')
         self.ui.inputFileEdit.setText(fpath)
 
     def showSelectOutputFileDialog(self):
-        fpath = QtGui.QFileDialog.getSaveFileName(self, 'Select file to save to', '/home/output.srt',
+        fpath = QtWidgets.QFileDialog.getSaveFileName(self, 'Select file to save to', '/home/output.srt',
                                                   'SRT file (*.srt)')
         self.ui.outputFileEdit.setText(fpath)
 
@@ -61,13 +61,13 @@ class Main(QtGui.QMainWindow):
     def processFiles(self):
         streamer = SrtStreamer(self.getInputFilePath(), self.getOutputFilePath(), self.getDelta())
         streamer.streamConvert()
-        msgBox = QtGui.QMessageBox.information(self, "Success",
+        msgBox = QtWidgets.QMessageBox.information(self, "Success",
                                                "The converted output has been saved to " + self.getOutputFilePath(),
                                                "OK")
 
 
 def main():
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
 
     my_mainWindow = Main()
     my_mainWindow.show()
