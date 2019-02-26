@@ -1,5 +1,5 @@
 import unittest
-from src.srtdataset import SrtDataSet
+from srttimeadjuster.srtdataset import SrtDataSet
 from datetime import timedelta
 
 

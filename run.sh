@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-cd src
-
-python3 main.py
+python3 -m srttimeadjuster.main

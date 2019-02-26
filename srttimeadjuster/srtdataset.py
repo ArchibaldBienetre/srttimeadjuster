@@ -1,6 +1,5 @@
-from datetime import timedelta
-
 import time
+from datetime import timedelta
 
 
 # Simple class to encapsulate an SRT data set like this:

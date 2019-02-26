@@ -1,5 +1,6 @@
-from srtdataset import SrtDataSet
 import re
+
+from srttimeadjuster.srtdataset import SrtDataSet
 
 
 # def test():

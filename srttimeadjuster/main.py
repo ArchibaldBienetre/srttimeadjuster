@@ -1,10 +1,11 @@
 import sys
-from PyQt5 import QtWidgets
-import mainwindow
-
-from dialstate import DialState
-from srtstreamer import SrtStreamer
 from datetime import timedelta
+
+from PyQt5 import QtWidgets
+
+from srttimeadjuster.mainwindow import Ui_MainWindow
+from srttimeadjuster.dialstate import DialState
+from srttimeadjuster.srtstreamer import SrtStreamer
 
 """
 An application that reads an SRT file 
@@ -29,7 +30,7 @@ class Main(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(Main, self).__init__()
-        self.ui = mainwindow.Ui_MainWindow()
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
         self.dialState = DialState(self.ui.dialSeconds, self.ui.doubleSpinBoxSeconds)
