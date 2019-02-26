@@ -43,12 +43,12 @@ class Main(QtWidgets.QMainWindow):
     def showSelectInputFileDialog(self):
         fpath = QtWidgets.QFileDialog.getOpenFileName(self, 'Open SRT file', '/home',
                                                   'SRT files (*.srt *.SRT)')  # '*.srt *.SRT;; Text files (*.txt)')
-        self.ui.inputFileEdit.setText(fpath)
+        self.ui.inputFileEdit.setText(fpath[0])
 
     def showSelectOutputFileDialog(self):
         fpath = QtWidgets.QFileDialog.getSaveFileName(self, 'Select file to save to', '/home/output.srt',
                                                   'SRT file (*.srt)')
-        self.ui.outputFileEdit.setText(fpath)
+        self.ui.outputFileEdit.setText(fpath[0])
 
     def getInputFilePath(self):
         return self.ui.inputFileEdit.text()
@@ -63,8 +63,7 @@ class Main(QtWidgets.QMainWindow):
         streamer = SrtStreamer(self.getInputFilePath(), self.getOutputFilePath(), self.getDelta())
         streamer.streamConvert()
         msgBox = QtWidgets.QMessageBox.information(self, "Success",
-                                               "The converted output has been saved to " + self.getOutputFilePath(),
-                                               "OK")
+                                               "The converted output has been saved to " + self.getOutputFilePath())
 
 
 def main():
